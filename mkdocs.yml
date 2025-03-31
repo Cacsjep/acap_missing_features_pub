@@ -1,0 +1,45 @@
+site_name: ACAP Missing Features Documentation
+theme:
+  name: material
+  palette:
+    scheme: slate  # Use 'slate' for a dark color scheme; use 'default' for light mode.
+    toggle:
+      icon: material/weather-night
+      name: Switch to light mode
+
+nav:
+  - About: index.md
+
+  - Changelog: change.md
+  - Compatibility: compat.md
+  - Enable or Disable Features: endis.md
+  - Event Trigger: event_trigger.md
+  - Features: 
+    - Overview: features.md
+    - Event Countdown: event_countdown.md
+    - Event Delay Timer: event_delay_timer.md
+    - Event Timed Sequence: event_timed.md
+    - Event Sunrise and Sunset: event_sunrise.md
+    - Metadata to HTTPS: metadata_to_https.md
+    - InfluxDB Push Configuration: influxdb_push.md
+    - Image to SD-Card: img_sdcard.md
+    - Parking Times: parking_times.md
+  - General Settings: general_settings.md
+  - Installation: install.md
+  - Licensing: licensing.md
+  - Support: support.md
+
+extra_css:
+  - css/custom.css
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
