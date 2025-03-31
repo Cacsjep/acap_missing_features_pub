@@ -2,7 +2,7 @@ site_name: ACAP Missing Features Documentation
 theme:
   name: material
   palette:
-    scheme: slate  # Use 'slate' for a dark color scheme; use 'default' for light mode.
+    scheme: slate 
     toggle:
       icon: material/weather-night
       name: Switch to light mode
