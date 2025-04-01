@@ -1,8 +1,7 @@
 # Parking Times Configuration
 
-*Only works with AXIS License Plate Verifier (ALPV)*
-
----
+!!! note
+    Only works with AXIS License Plate Verifier (ALPV)
 
 #### Preparing AXIS License Plate Verifier
 
@@ -56,5 +55,5 @@ Additional controls in the monitoring interface include:
 - **Show Only Overparked (Blue Car Icon):**  
   Filters the list to display only vehicles that are currently overparked.
 
-> **Note:**  
-> You can either use the dynamically generated overparking event condition in the AXIS event rule or use the Metadata to HTTPS feature to send all details regarding parking minutes and plate information to an external HTTPS server.
+!!! tip
+    You can either use the dynamically generated overparking event condition in the AXIS event rule or use the Metadata to HTTPS feature to send all details regarding parking minutes and plate information to an external HTTPS server.

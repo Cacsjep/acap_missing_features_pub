@@ -32,7 +32,7 @@ This configuration allows you to trigger a follow‑up event only if it occurs w
 
 ---
 
-#### 3. Save the Configuration
+#### Save the Configuration
 
 - **Save:**  
   Once you have entered all required settings, click **Save** to apply the configuration.

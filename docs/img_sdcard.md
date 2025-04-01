@@ -55,27 +55,33 @@ After saving your configuration, you can view real-time storage details:
 #### Viewing Images
 
 - **View Images:**  
-  Specify a date and time range in the **From** and **To** fields.
+    Specify a date and time range in the **From** and **To** fields.
 - **Search:**  
-  Click the search button (magnifying glass icon) to load thumbnails of images captured in that timeframe.
+    Click the search button (magnifying glass icon) to load thumbnails of images captured in that timeframe.
 - **Grid Columns:**  
-  Adjust the grid layout to see more or fewer images per page.
+    Adjust the grid layout to see more or fewer images per page.
 - **Pagination:**  
-  Use the page numbers to navigate through all snapshots.
+    Use the page numbers to navigate through all snapshots.
 - **Zoom and Download an Image:**  
-  Hover over an image with your mouse to reveal the zoom and download buttons for that image.
+    Hover over an image with your mouse to reveal the zoom and download buttons for that image.
 
 ---
+
+!!! info 
+
+    The video generator uses images that have been “searched or viewed” in the **View Images** section. Ensure the time range includes the snapshots you want in your video.
 
 #### Generating Videos
 
 - **Selecting Images:**  
-  The video generator uses images that have been “searched or viewed” in the **View Images** section. Ensure the time range includes the snapshots you want in your video.
+    The video generator uses images that have been “searched or viewed” in the **View Images** section. Ensure the time range includes the snapshots you want in your video.
 - **Video Generation Settings:**  
-  - **FPS:** Frames per second for the resulting video (1–60).
-  - **Width / Height:** Dimensions of the output video (e.g., 1280×720).
-  - **HTTPS Requirement:** Video encoding requires a secure connection (HTTPS). If you see a warning, reload the camera interface over HTTPS.
+    - **FPS:** Frames per second for the resulting video (1–60).
+    - **Width / Height:** Dimensions of the output video (e.g., 1280×720).
+    - **HTTPS Requirement:** Video encoding requires a secure connection (HTTPS). If you see a warning, reload the camera interface over HTTPS.
 - **Convert to MP4:**  
-  Click **Convert to MP4** to generate your timelapse or video file from the selected snapshots. The video will be created and made available for download.
+    Click **Convert to MP4** to generate your timelapse or video file from the selected snapshots. The video will be created and made available for download.
 
-> **Note:** Video generation is completed entirely in the browser; no video is stored on the device.
+!!! quote 
+
+    Video encoding requires a secure connection (HTTPS). If you see a warning, reload the camera interface over HTTPS.

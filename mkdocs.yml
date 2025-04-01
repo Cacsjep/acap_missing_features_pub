@@ -21,7 +21,7 @@ nav:
     - Event Timed Sequence: event_timed.md
     - Event Sunrise and Sunset: event_sunrise.md
     - Metadata to HTTPS: metadata_to_https.md
-    - InfluxDB Push Configuration: influxdb_push.md
+    - InfluxDB Push: influxdb_push.md
     - Image to SD-Card: img_sdcard.md
     - Parking Times: parking_times.md
   - General Settings: general_settings.md
