@@ -66,3 +66,9 @@ Provides a user-friendly interface to configure trigger events for your ACAP app
 #### Example for Virtual Port 1 (Active)
 
 [![](images/example.PNG)](images/example.PNG)
+
+#### Videos
+[How to setup an Event Trigger](https://youtu.be/18Kz0O5mTog)
+
+[Setup an AXIS Object Analytics Event Trigger](https://youtu.be/5FFJfvaca3E)
+
