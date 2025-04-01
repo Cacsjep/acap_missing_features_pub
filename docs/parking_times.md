@@ -92,4 +92,4 @@ Additional controls in the monitoring interface include:
   Filters the list to display only vehicles that are currently exceeded.
 
 !!! tip
-    You can either use the dynamically generated overparking event condition in the AXIS event rule or use the Metadata to HTTPS feature to send all details regarding parking minutes and plate information to an external HTTPS server.
+    You can either use the dynamically generated **Parking Time Exceeded**  event condition in the AXIS event rule or use the Metadata to HTTPS feature to send all details regarding parking minutes and plate information to an external HTTPS server.
