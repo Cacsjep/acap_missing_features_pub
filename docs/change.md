@@ -2,11 +2,16 @@
 
 ##### Legend  
 - **I:** Improvement  
-- **B:** Bug  
+- **B:** Bugfix 
 - **F:** New Feature  
 - **C:** Change  
 
 
+---
+
+##### V0.6.2 – 01.04.2025
+- **B:** InfluxDB Feature Stop 
+  
 ---
 
 ##### V0.6.1 – 31.03.2025
