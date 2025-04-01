@@ -9,6 +9,11 @@
 
 ---
 
+##### V0.6.3 – 02.04.2025
+- **I:** Dual camera mode for parking times
+  
+---
+
 ##### V0.6.2 – 01.04.2025
 - **B:** InfluxDB Feature Stop 
   
