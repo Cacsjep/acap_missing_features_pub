@@ -81,15 +81,15 @@ The monitoring section displays all currently detected vehicles and their parkin
 | **Exit Time**           | Timestamp of when the vehicle exited.                                |
 | **Parking Duration (min)** | Duration (in minutes) that the vehicle remained parked.           |
 | **Exited**              | Indicates whether the vehicle has left the parking area.             |
-| **Overparked**          | Indicates whether the vehicle exceeded the maximum parking duration. |
+| **Parking Time Exceeded**          | Indicates whether the vehicle exceeded the maximum parking duration. |
 
 Additional controls in the monitoring interface include:
 
 - **Table Freeze (Blue Pause Button):**  
   Stops the automatic refresh of the monitoring table, allowing you to review data without updates.
 
-- **Show Only Overparked (Blue Car Icon):**  
-  Filters the list to display only vehicles that are currently overparked.
+- **Show Only exceeded (Blue Car Icon):**  
+  Filters the list to display only vehicles that are currently exceeded.
 
 !!! tip
     You can either use the dynamically generated overparking event condition in the AXIS event rule or use the Metadata to HTTPS feature to send all details regarding parking minutes and plate information to an external HTTPS server.
