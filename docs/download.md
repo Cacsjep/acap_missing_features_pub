@@ -1,6 +1,6 @@
 #### Releases
 
-You can download the ACAP files from the following link. Choose the .zip package for your camera:  
+You can download the ACAP files from the following link:  
 [ACAP Missing Features Docs Releases](https://github.com/Cacsjep/acap_missing_features_docs/releases)
 
 !!! bug "Info"
