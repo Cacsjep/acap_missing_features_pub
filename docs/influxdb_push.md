@@ -68,3 +68,101 @@ Push the Day Night metadata event
 ##### Metadata AXIS Object Analytics - Area Count Humans Example
 Push the Day Night metadata event
 [![](images/human.PNG)](images/human.PNG)
+
+
+
+#### Grafana and InfluxDB Integration
+
+This guide shows you how to integrate Grafana with InfluxDB using the **Flux** query language. Follow the steps below to set up your datasource and create a dashboard for visualizing metrics such as CPU usage.
+
+---
+
+##### Prerequisites
+
+!!! info 
+    You should already have everything in place, as it’s configured identically to the Missing Feature ACAP setup.
+
+- **Missing Feature ACAP:** InfluxDB Push enabled, and configured.
+- **InfluxDB:** A running InfluxDB instance. 
+- **InfluxDB API Token:** ACAP uses token-based authentication with InfluxDB.
+- **InfluxDB Bucket:** You need an InfluxDB bucket.
+- **InfluxDB Org:** You need the name of your InfluxDB organization.
+
+---
+
+##### Add InfluxDB Datasource in Grafana
+
+First, navigate to your Grafana instance and add a new InfluxDB datasource.
+
+![New Datasource](images/new_source.PNG)
+
+---
+
+##### Configure Datasource Settings
+
+- **Datasource Name:** Set a name for your datasource.
+- **Query Language:** Select **Flux** as the query language.
+
+![Select Flux](images/flux.PNG)
+
+---
+
+##### Set Your InfluxDB HTTP URL
+
+Specify your InfluxDB HTTP URL in the settings.
+
+![InfluxDB Endpoint](images/endpoint.PNG)
+
+---
+
+##### Enter InfluxDB Credentials
+
+Fill in your InfluxDB Organization, Token, and Default Bucket.
+
+![InfluxDB Credentials](images/ifdb.PNG)
+
+---
+
+##### Create a Dashboard
+
+Navigate to the dashboard section in Grafana and add a new visualization. For example, create a panel to monitor the **Missing Features CPU usage**.
+
+[![](images/example_cpu_mf.PNG)](images/example_cpu_mf.PNG)
+
+---
+
+##### Extracting Flux Scripts from InfluxDB Data Explorer for Grafana
+
+Use the InfluxDB Data Explorer to inspect the metrics and use the query builder in combinitation, to switch afterwards to script editor mode to copy the flux script for grafana.
+[![](images/explore.PNG)](images/explore.PNG)
+
+For example, let's locate our metadata event **device_io_virtualport** that we previously configured and executed to ensure an entry exists in the database:
+
+- Select the bucket.
+- Choose `metadata`.
+- Set the filter to `name`.
+- Select `device_io_virtualport`.
+- Uncheck the `AGGREATE Function` on the right side (it's a boolean value).
+- Enable the `View Raw Data` mode to display our entries in a table.
+
+
+[![](images/io_metadata.PNG)](images/io_metadata.PNG)
+
+- Click on the **Script Editor** button to view the Flux script.
+- You can now use this Flux script in Grafana.
+
+[![](images/io_script.PNG)](images/io_script.PNG)
+
+##### Public Tutorials and Additional Resources
+
+For further learning and more detailed tutorials, consider the following public resources:
+
+- **Grafana Tutorials:**  
+  [Official Grafana Tutorials](https://grafana.com/tutorials) – Learn more about creating dashboards, panels, and advanced visualizations.
+
+- **InfluxDB Documentation:**  
+  [Official InfluxDB Docs](https://docs.influxdata.com/influxdb/) – Detailed guides on installation, configuration, and usage of InfluxDB.
+
+- **Flux Language Guide:**  
+  [InfluxDB Flux Documentation](https://docs.influxdata.com/flux/latest/) – In-depth information on the Flux query language and its capabilities.
+

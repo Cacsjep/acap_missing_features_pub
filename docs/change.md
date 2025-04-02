@@ -9,6 +9,16 @@
 
 ---
 
+##### V0.6.4 – 02.04.2025
+- **B:** Debug logging when loglevel is info
+- **B:** False internal logging messages in InfluxDB metrics
+- **B:** Remove old close channel on influxDB, prevent sometimes stopping 
+- **B:** Skip procs that not more active when iterating it to get proc stats (short lived)
+- **I:** Improve metrics error message
+- **C:** Remove default dev config from InfluxDB 
+  
+---
+
 ##### V0.6.3 – 02.04.2025
 - **I:** Dual camera mode for parking times
   
