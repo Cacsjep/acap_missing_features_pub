@@ -9,6 +9,11 @@
 
 ---
 
+##### V0.6.7 – 03.04.2025
+- **I:** Live log, better visibility
+  
+---
+
 ##### V0.6.6 – 03.04.2025
 - **I:** Switched to zone-based approach in the parking feature
 - **I:** Add enter and exit events to parking feature
