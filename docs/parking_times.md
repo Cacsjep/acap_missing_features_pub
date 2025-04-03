@@ -21,7 +21,7 @@
 
 ---
 
-#### Configuration
+#### Genaral Configuration
 
 - **Max Parking Duration (Minutes):**  
   Specify the maximum number of minutes a vehicle is allowed to park.  
@@ -41,34 +41,88 @@
 - **Save Changes:**  
   Click **Save** to store your configuration settings.
 
-#### Dual Mode Configuration
-Dual Camera Mode allows you to use two cameras simultaneously to monitor parking spaces — ideal for setups with separate entry and exit cameras. 
+#### Parking Zones Configuration
 
-!!! note
-    When enabled, one camera must be assigned as **IN** and the other as **OUT**. 
-    Use the **AXIS License Plate Verifier** app to configure IN and OUT directions properly.
-    The order of assignment does not affect functionality.  
+Parking zones make it possible to support most parking scenarios, including setups with multiple zones or areas.
 
-!!! warning
-    Only Digest authentication is supported.
+The system supports:
 
-- **Dual Mode:**  
-    Toggle this switch to enable or disable Dual Camera Mode.
+  - A **single camera**, acting as both **entry and exit**.
+  - **Multiple cameras**, where each camera must be assigned a `Role` within the zone.
 
-- **IP Address:**  
-    Enter the IP address of the second camera.  
+##### Configuration Rules (Roles)
 
-- **Username:**  
-    Enter the username used to access the second camera.  
+To ensure correct behavior, the following rules must be respected:
 
-- **Password:**  
-    Enter the password for the second camera.  
+- A zone **cannot have multiple cameras** with the role `ENTRY_AND_EXIT`.
+- A zone that **does not contain a camera** with the role `ENTRY_AND_EXIT` **must include** at least one `ENTRY` and one `EXIT` role.
+- A zone **with a camera** set to `ENTRY_AND_EXIT` **can also include** additional cameras with the `ENTRY` or `EXIT` roles.
+- The same camera **cannot be assigned multiple times** to a single zone.
 
-- **Use HTTPS:**  
-    Enable this option to communicate securely with the second camera using HTTPS.
+---
 
-!!! tip
-    After saving, a connection test to the second camera is automatically performed to verify accessibility and credentials.
+##### Configuration
+
+!!! danger "All cameras must be online"
+    After saving, a connection test is automatically performed for all external cameras  
+    to verify accessibility and credentials.  
+    **Make sure all cameras are online during configuration.**
+
+!!! note "ACAP-Assigned Camera Restriction"
+    The initial default zone cannot be deleted because it is assigned to the internal camera running the ACAP.
+    Also, the internal camera entry **cannot be removed** from this zone.
+
+!!! warning "Authentication Requirement"
+    Only **Digest Authentication** is supported for external cameras.  
+    Ensure that your cameras are running an **up-to-date firmware**, and that **digest authentication is enabled**.
+
+###### Zone Buttons
+
+**Edit Zone**
+
+![](images/edit.PNG)
+
+**Remove Zone**
+
+![](images/rem.PNG)
+
+---
+
+###### Add New Zone
+
+![](images/addzone.PNG)
+
+Add a new zone by clicking the `ADD ZONE` button.
+
+[![](images/new_zone.PNG)](images/new_zone.PNG)
+
+After adding a new zone, you will see that the configuration is initially incomplete.  
+Click on the `Zone Edit` button to configure the zone.
+Configure the camera where ACAP is running or add new ones, and follow the `Configuration Roles`.
+
+---
+
+###### Camera Settings
+
+- **Name**  
+  Name of the camera.
+
+- **IP Address**  
+  Enter the IP address of the external camera.
+
+- **Username**  
+  Enter the username used to access the external camera.
+
+- **Password**  
+  Enter the password for the external camera.
+
+- **Use HTTPS**  
+  Enable this option to communicate securely with the external camera using HTTPS.
+
+- **Role**  
+  Specify the role of the camera within the zone (`Entry`, `Exit`, or `Entry and Exit`).
+
+
 
 #### Monitoring Section
 
@@ -79,6 +133,8 @@ The monitoring section displays all currently detected vehicles and their parkin
 | **License Plate**       | Shows the recognized plate number.                                   |
 | **Entry Time**          | Timestamp of when the vehicle entered the parking area.              |
 | **Exit Time**           | Timestamp of when the vehicle exited.                                |
+| **Zone**                | Zone Name.                                                           |
+| **Camera**                | Camera Name.                                                           |
 | **Parking Duration (min)** | Duration (in minutes) that the vehicle remained parked.           |
 | **Exited**              | Indicates whether the vehicle has left the parking area.             |
 | **Parking Time Exceeded**          | Indicates whether the vehicle exceeded the maximum parking duration. |
@@ -92,4 +148,22 @@ Additional controls in the monitoring interface include:
   Filters the list to display only vehicles that are currently exceeded.
 
 !!! tip
-    You can either use the dynamically generated **Parking Time Exceeded**  event condition in the AXIS event rule or use the Metadata to HTTPS feature to send all details regarding parking minutes and plate information to an external HTTPS server.
+    You can either use the dynamically generated **Parking Time Exceeded**, **Car Entered**, **Car Exited** events in the AXIS event rule or use the Metadata to HTTPS feature to send all details regarding parking minutes and plate information to an external HTTPS server.
+    
+    [![](images/events.PNG)](images/events.PNG)
+
+#### Connection Test
+
+!!! danger "All cameras must be online"
+    After saving, a connection test is automatically performed for all external cameras  
+    to verify accessibility and credentials.  
+    **Make sure all cameras are online during configuration.**
+
+#### Use Live Logs for Troubleshooting
+
+Open the **Live Logs** by clicking the logging button located in the bottom-left corner of the interface to view real-time log entries.
+
+Use the logs to validate incoming **AXIS License Plate Verifier metadata messages**.  
+This is especially helpful for troubleshooting.
+
+[![](images/log.PNG)](images/log.PNG)

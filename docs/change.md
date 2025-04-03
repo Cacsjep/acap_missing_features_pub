@@ -9,6 +9,12 @@
 
 ---
 
+##### V0.6.6 – 03.04.2025
+- **I:** Switched to zone-based approach in the parking feature
+- **I:** Add enter and exit events to parking feature
+  
+---
+
 ##### V0.6.4 – 02.04.2025
 - **B:** Debug logging when loglevel is info
 - **B:** False internal logging messages in InfluxDB metrics
