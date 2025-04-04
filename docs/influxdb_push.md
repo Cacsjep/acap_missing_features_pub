@@ -7,17 +7,19 @@
 
 This feature introduces two distinct approaches for data collection:
 
-- **Metrics:**  
-  All non metadata metrics have an interval-based configuration. You can specify how frequently each metric should be collected, making it easy to monitor performance indicators such as CPU usage, memory, or temperature on a regular schedule.
+- **Non-Metadata Data Points:**  
+  All non-metadata data points have an interval-based configuration. You can specify how frequently each datapoint/metric is collected.
 
-- **Metadata:**  
-  Metadata is now event-based. Unlike metrics, metadata is not collected on a fixed interval but is triggered by specific events. Moreover, you can add as many metadata events as you want, allowing you to capture detailed information exactly when it matters.
+    !!! Note
+        Each non-metadata data point can be added only once.
+
+- **Metadata Data Points:**  
+  Metadata data points are event-based. They are not collected on a fixed interval but are triggered by specific events.
+
+    !!! Tip
+        You can add as many metadata events as you want, allowing you to capture detailed information exactly when it matters.
 
 ---
-
-#### Interval-Based Settings
-Each non metadata metric includes an interval setting where you can define the frequency of data capture (e.g., every 5 seconds, 10 seconds, etc.).
-
 
 #### Use it with Grafana
 
@@ -32,48 +34,96 @@ The primary idea behind this feature is to use it with Grafana, allowing you to 
 - **InfluxDB Bucket:** You need an InfluxDB bucket.
 - **InfluxDB Org:** You need the name of your InfluxDB organization.
 
+#### Data Point Buttons
 
-#### Configure non Metadata Metrics
+**Edit Data Point**
 
-Enable or disable the metric via the switch, and open the configuration via the vertical 3 dots.
-[![](images/configenable.PNG)](images/configenable.PNG)
+![](images/edit.PNG)
+
+**Remove Data Point**
+
+![](images/delete.PNG)
+
+#### Configure Non-Metadata Data Points
+
+
+##### Add Non-Metadata Data Points
+
+!!! tip "Examples of Non-Metadata Data Points"
+    - CPU
+    - Disk
+    - Uptime
+    - etc.
+
+Click the `ADD DATAPOINT` button to open the data point adding menu.
+![](images/add.PNG)
+
+Select the data point to add.
+![](images/menu.PNG)
+
+!!! warning "Note"
+    If any data point is grayed out (disabled), it has already been added and cannot be added twice.
+
+
+##### Configure Non-Metadata Data Points
+To configure the data point, click on the `Edit Data Point` button.
 
 - **Set Interval:**  
-    For each metric, define the desired interval at which data should be pushed to InfluxDB.
-- **Save Settings:**  
-    Confirm and save your interval configurations for each metric.
+  Define the desired interval at which data should be pushed to InfluxDB.
 
-#### Configure Metadata Events
+Click the `DONE` button when you have finished, then click the `SAVE` button.
 
-Enable or disable the metadata via the switch, and open the configuration via the vertical 3 dots.
-[![](images/configenable.PNG)](images/configenable.PNG)
 
-- **Add Metadata Event:**  
-    Click on the option to add a new metadata event.
+#### Configure Metadata Data Points
+
+##### Add Metadata Data Points
+Click the `ADD DATAPOINT` button to open the data point adding menu and select `Metadata`.
+
+![](images/add.PNG)
+
+![](images/menu.PNG)
+
+After adding a new metadata datapoint, you will see that the configuration is initially incomplete. 
+
+[![](images/notconf.PNG)](images/notconf.PNG)
+
+##### Configure Metadata Data Points
+
+Open the configuration via the Edit button.
+
+![](images/edit.PNG)
+
+- **Data Point Name:**  
+  For better differentiation in the configuration list, you can change the name of the data point.
 - **Select Trigger:**  
-    Choose the event that will trigger the metadata capture (e.g., sensor threshold exceeded, error event, etc.).
+  Choose the event that will trigger the metadata capture (e.g., sensor threshold exceeded, error event, etc.).
 - **Define Metadata Fields:**  
-    Specify which metadata fields should be included in the payload.
-- **Define Datapoint Name:**  
-    The datapoint name is the key, with which we store the data in InfluxDB.
+  Specify which metadata fields should be included in the payload.
+- **Define InfluxDB Data Point Name:**  
+  The InfluxDB data point name is the key with which the data is stored in InfluxDB.
 - **Repeat:**  
-    Add as many metadata events as needed.
+  Add as many metadata events as needed.
 - **Save Configuration:**  
-    Save your metadata settings once you have added all desired events.
+  After finishing the configuration, don't forget to click the `SAVE` button.
 
-##### Metadata Day Night Example 
-Push the Day Night metadata event
-[![](images/ov.PNG)](images/ov.PNG)
 
-##### Metadata AXIS Object Analytics - Area Count Humans Example
-Push the Day Night metadata event
+##### Metadata Configuration Example
+
+**Metadata Day Night**  
+[![](images/dn.PNG)](images/dn.PNG)
+
+**Metadata AXIS Object Analytics - Area Count Humans Example**  
+Push the Day Night metadata event  
 [![](images/human.PNG)](images/human.PNG)
 
+The final configuration would look like this:  
+[![](images/both.PNG)](images/both.PNG)
 
 
 #### Grafana and InfluxDB Integration
 
-This guide shows you how to integrate Grafana with InfluxDB using the **Flux** query language. Follow the steps below to set up your datasource and create a dashboard for visualizing metrics such as CPU usage.
+This guide shows you how to integrate Grafana with InfluxDB using the **Flux** query language. 
+Follow the steps below to set up your datasource and create a dashboard for visualizing data/metrics from your AXIS Camera.
 
 ---
 
@@ -133,7 +183,7 @@ Navigate to the dashboard section in Grafana and add a new visualization. For ex
 
 ##### Extracting Flux Scripts from InfluxDB Data Explorer for Grafana
 
-Use the InfluxDB Data Explorer to inspect the metrics and use the query builder in combinitation, to switch afterwards to script editor mode to copy the flux script for grafana.
+Use the InfluxDB Data Explorer to inspect the data and use the query builder in combinitation, to switch afterwards to script editor mode to copy the flux script for grafana.
 [![](images/explore.PNG)](images/explore.PNG)
 
 For example, let's locate our metadata event **device_io_virtualport** that we previously configured and executed to ensure an entry exists in the database:

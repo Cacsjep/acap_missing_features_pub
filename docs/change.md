@@ -9,6 +9,19 @@
 
 ---
 
+##### V0.6.9 – 04.04.2025
+- **I:** Improve InfluxDB Feature configuration
+- **I:** Fix InfluxDB connection test, org and bucket must belong
+- **B:** Fix dataless events in when using in InfluxDB Feature
+- **I:** Add version field to JSON configurations for futher upgrade between versions
+   
+---
+
+##### V0.6.8 – 04.04.2025
+- **I:** Add triggerd based deletion in parking times
+  
+---
+
 ##### V0.6.7 – 03.04.2025
 - **I:** Live log, better visibility
   
