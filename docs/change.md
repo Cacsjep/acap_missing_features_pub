@@ -9,6 +9,11 @@
 
 ---
 
+##### V0.6.10 – 04.04.2025
+- **B:** Fix metadatapoint duplicated name validation
+   
+---
+
 ##### V0.6.9 – 04.04.2025
 - **I:** Improve InfluxDB Feature configuration
 - **I:** Fix InfluxDB connection test, org and bucket must belong
